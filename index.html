@@ -1477,7 +1477,6 @@ function saveListEdits() {
     ev.name = row.querySelector('.ed-name').value.trim();
     ev.description = row.querySelector('.ed-desc').value.trim();
     ev.url = row.querySelector('.ed-url').value.trim();
-    ev.location = row.querySelector('.ed-loc').value.trim();
     ev.category = row.querySelector('.ed-cat').value;
     const imgInput = row.querySelector('.ed-img');
     if (imgInput) ev.image = imgInput.value.trim() || null;
