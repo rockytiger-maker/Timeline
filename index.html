@@ -681,7 +681,6 @@ body {
           <th>Category</th>
           <th>Description</th>
           <th>URL</th>
-          <th>Location</th>
           <th>Image</th>
           <th style="width:70px"></th>
         </tr>
@@ -1412,7 +1411,7 @@ function renderList() {
   filtered.sort((a, b) => a.startYear - b.startYear);
 
   if (filtered.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="8" class="list-empty">No events found.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="7" class="list-empty">No events found.</td></tr>';
     return;
   }
 
@@ -1433,7 +1432,6 @@ function renderList() {
         <td><select class="edit-input ed-cat">${catOptions(ev.category)}</select></td>
         <td><textarea class="edit-input ed-desc">${escHtml(ev.description)}</textarea></td>
         <td><input class="edit-input ed-url" type="text" value="${escHtml(ev.url)}"></td>
-        <td><input class="edit-input ed-loc" type="text" value="${escHtml(ev.location)}"></td>
         <td>${ev.category === 'Map' ? `<input class="edit-input ed-img" type="text" value="${escHtml(ev.image || '')}" placeholder="images/file.jpg">` : ''}</td>
         <td><button class="delete-btn" onclick="deleteEvent('${ev.id}')">Delete</button></td>
       </tr>`;
@@ -1452,7 +1450,6 @@ function renderList() {
         <td><span class="cat-badge${dt ? ' dark-text' : ''}" style="background:${color}">${escHtml(ev.category)}</span></td>
         <td class="desc-cell">${escHtml(ev.description)}</td>
         <td>${urlCell}</td>
-        <td>${escHtml(ev.location)}</td>
         <td>${imgCell}</td>
         <td><button class="delete-btn" onclick="deleteEvent('${ev.id}')">Delete</button></td>
       </tr>`;
