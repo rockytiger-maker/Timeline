@@ -493,7 +493,7 @@ body {
 
 .json-version {
   background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 8px;
-  padding: 12px 18px; margin-bottom: 20px; width: 100%; max-width: 720px;
+  padding: 12px 18px; margin-bottom: 80px; width: 100%; max-width: 720px;
   font-size: 13px; color: #555; text-align: center;
 }
 .json-version strong { color: #16213e; }
@@ -966,7 +966,7 @@ function assignLanes(evts) {
   // Pack with minimum 4 lanes and label-aware spacing for single-year events
   function packSpread(arr) {
     const s = [...arr].sort((a, b) => a.startYear - b.startYear || a.endYear - b.endYear);
-    const MIN_LANES = 6;
+    const MIN_LANES = cartoMode ? 8 : 6;
     // Track visual end per lane: for single-year events, extends by label width in year-space
     const laneVisualEnds = [];
     for (let i = 0; i < MIN_LANES; i++) laneVisualEnds.push(-9999);
