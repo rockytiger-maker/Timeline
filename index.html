@@ -240,8 +240,12 @@ body {
 }
 
 .timeline-axis {
-  position: relative; height: 56px;
+  position: sticky;
+  bottom: 0;
+  height: 56px;
   border-top: 2px solid #444;
+  background: rgba(253,253,254,0.97);
+  z-index: 10;
 }
 .tl-tick {
   position: absolute; top: 0; width: 1px;
